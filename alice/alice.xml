@@ -13,15 +13,15 @@
         </output>
 		<context>
 		<input pattern="* (я не*|меня зовут не*|мое имя не*|меня зовут*) *">
-		    <output>
+		    <output  if="full($UserName)">
 				<item value="Извините обозналась. Как тебя зовут?"/>
 				<item value="Здравствуй, разве тебя зовут  не $UserName? Как тебя зовут? "/>
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>
-			<input pattern="$Text">
+			
 			<var name="UserName" value="cap($Text)" scope="user"/>
 			<output value="Приятно познакомиться, $UserName!"/>
-			</input>
+			
 		</input>
 		
 		
