@@ -6,14 +6,15 @@
 		<item value="Что такое википедия?"/>
     </sample>
 	<input pattern="*">
-		<output value="Напиши мне что-нибудь. Например привет!"/>
+		<output value="Напиши мне что-нибудь. Например, привет!"/>
 	</input>
 
     <input pattern="* (привет*|здравствуй*) *">
+	
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
-			<item value="Мяу, мой котик..."/>
+			<item var name="tts" value=<speaker audio="alice-sounds-animals-cat-3.opus">"Мяу, мой котик..."/>
 			<item value="$UserName! Я вас приветствую"/>
         </output>
 		<context>
