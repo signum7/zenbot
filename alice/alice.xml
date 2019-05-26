@@ -17,26 +17,15 @@
 				<item value="Извините обозналась. Как тебя зовут?"/>
 				<item value="Здравствуй, разве тебя зовут  не $UserName? Как тебя зовут? "/>
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
-			</output>		
+			</output>
+			<var name="UserName" value="" scope="user"/>
 		</input>
 		
-				<context>
-		<input pattern="[* (меня зовут|мое имя) я*]$Text">
-		    <output if="full($UserName)">
-				<var name="UserName" value="cap($Text)" scope="user"/>
-                <output>
-					<item value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
-					<item value="Я запомнила"/>
-					<item value="Рада знакомству $UserName! "/>
-					
-				</output>
-			</output>		
-		</input>
-		</context>
+		
 		
 		</context>
 		
-
+		
 		
         <context if="empty($UserName)" id="name">
             <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
