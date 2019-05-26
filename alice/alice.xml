@@ -12,14 +12,29 @@
 			<item value="Мяу, мой котик..."/>
         </output>
 		<context>
-		<input pattern="* (я не*|меня зовут не*|мое имя не*) *">
+		<input pattern="* (я не*|меня зовут не*|мое имя не*|меня зовут*) *">
 		    <output>
-				<item value="Извините обозналась"/>
-				<item value="Здравствуй, разве тебя зовут  не $UserName? "/>
-				<item value="Упс, но неважно мой котик..."/>
+				<item value="Извините обозналась. Как тебя зовут?"/>
+				<item value="Здравствуй, разве тебя зовут  не $UserName? Как тебя зовут? "/>
+				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>		
 		</input>
 		</context>
+		
+		<context>
+		<input pattern="$Text">
+		    <output if="full($UserName)">
+				<var name="UserName" value="cap($Text)" scope="user"/>
+                <output>
+					<item value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+					<item value="Я запомнила"/>
+					<item value="Рада знакомству $UserName! "/>
+					
+				</output>
+			</output>		
+		</input>
+		</context>
+		
         <context if="empty($UserName)" id="name">
             <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
 
