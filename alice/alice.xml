@@ -3,7 +3,7 @@
         <item value="Помощь"/>
         <item value="Что ты умеешь?"/>
     </sample>
-
+<output value="Напиши мне что-нибудь."/>
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
