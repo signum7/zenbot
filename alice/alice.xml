@@ -18,10 +18,14 @@
 				<item value="Здравствуй,как тебя зовут? "/>
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>
+			<context if="full($UserName)" id="name">
+			<input pattern="$Text">
+                <var name="UserName" value="cap($Text)" scope="user"/>
+                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <context/>
+            </input>
 			
-			<var name="UserName" value="cap($Text)" scope="user"/>
-			
-			
+			</context>
 		</input>		
 		</context>
 		
