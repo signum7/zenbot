@@ -6,6 +6,7 @@
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
 			<item value="Мяу, мой котик..."/>
+			<item value="$UserName! Я вас приветствую"/>
         </output>
 		<context>
 		<input pattern="* (я не*|меня зовут не*|мое имя не*) *">
@@ -28,10 +29,13 @@
 		
 		
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! Как тебя зовут?"/>
+            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, найду любую информацию в википедии. Чтобы выйти скажи, пока. А как тебя зовут?"/>
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output>  
+				<item value="Приятно познакомиться, $UserName! Что найти в википедии?"/>
+				<item value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+				</output>
                 <context/>
             </input>
         </context>
@@ -46,10 +50,13 @@
 			<output> 
 				<item value="Пока-пока, $UserName!"/>
 				<item value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
+				<item value="Обращайтесь"/>
+				<item value="До скорй встречи!"/>
+				<item value="Рада была помочь!"/>
 			</output> 
     </input>
 
-    <input pattern="[* (кто|что) так*] $Text">
+    <input pattern="$Text">
         <context id="name" if="empty($UserName)"/>
 
         <context id="wiki" if="full($UserName)">
@@ -65,7 +72,8 @@
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
                 <item value="В википедии ничего не нашлось..."/>
-				<item value="Упс..."/>
+				<item value="Упс. Ничего не нашлось."/>
+				<item value="Уточните запрос."/>
             </output>
 
             <output value="$Result" if="full($Result)"/>
