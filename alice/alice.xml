@@ -3,6 +3,7 @@
         <item value="Помощь"/>
         <item value="Что ты умеешь?"/>
 		<item value="Кто такая Алиса"/>
+		<item value="Что такое википедия?"/>
     </sample>
 	<input pattern="*">
 		<output value="Напиши мне что-нибудь. Например привет!"/>
