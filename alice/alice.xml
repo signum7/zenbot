@@ -25,12 +25,13 @@
 	
 
 
-    <input pattern="* пока *">        
+    <input pattern="* пока *">   
+<var name="tts" value="Пок+асики"/>	
         <var name="end_session" value="javascript: true"/>
 			<output value="Ну пока, незнакомец!" if="empty($UserName)"/>
 			<output> 
-			<item value="Пока-пока, $UserName!"/>
-			<item value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
+				<item value="Пока-пока, $UserName!"/>
+				<item value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
 			</output> 
     </input>
 
