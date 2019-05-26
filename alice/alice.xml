@@ -23,19 +23,7 @@
         </context>
     </input>
 	
-	<input pattern="* (я не*|меня завут не*|ты ошиблась я не*) *">
-		<output if="full($UserName)">
-			<item value="Привет, тебя разве завут не $UserName?"/>
-			<item value="Извини обозналась Тебя как зовут?"/>
-		</output>
-		
-		<input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
-                
-            </input>
-		
-	</input>
+
 
     <input pattern="* пока *">
         
