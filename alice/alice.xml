@@ -25,12 +25,13 @@
 	
 
 
-    <input pattern="* пока *">
-        
+    <input pattern="* пока *">        
         <var name="end_session" value="javascript: true"/>
 			<output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-			<output value="Пока-пока, $UserName!"/>
-			<output value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
+			<output> 
+			<item value="Пока-пока, $UserName!"/>
+			<item value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
+			<output/> 
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
@@ -49,6 +50,7 @@
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
                 <item value="В википедии ничего не нашлось..."/>
+				<item value="Упс..."/>
             </output>
 
             <output value="$Result" if="full($Result)"/>
