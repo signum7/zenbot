@@ -56,7 +56,7 @@
 			</output> 
     </input>
 
-    <input pattern="$Text">
+    <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
 
         <context id="wiki" if="full($UserName)">
