@@ -1,5 +1,8 @@
 <context>
-
+    <sample>
+        <item value="Помощь"/>
+        <item value="Что ты умеешь?"/>
+    </sample>
 
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
