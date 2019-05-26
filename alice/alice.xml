@@ -12,11 +12,11 @@
 			<item value="Мяу, мой котик..."/>
         </output>
 		<input pattern="* (я не*|меня зовут не*|мое имя не*) *">
-		    <output if="full($UserName)">
+		    <output>
 				<item value="Извините обозналась"/>
 				<item value="Здравствуй, разве тебя зовут  не $UserName? "/>
 				<item value="Упс, но неважно мой котик..."/>
-        </output>
+			</output>
 		
 		</input>
 
