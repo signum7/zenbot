@@ -19,9 +19,8 @@
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>		
 		</input>
-		</context>
 		
-		<context>
+				<context>
 		<input pattern="[* (меня зовут|мое имя) я*]$Text">
 		    <output if="full($UserName)">
 				<var name="UserName" value="cap($Text)" scope="user"/>
@@ -34,6 +33,10 @@
 			</output>		
 		</input>
 		</context>
+		
+		</context>
+		
+
 		
         <context if="empty($UserName)" id="name">
             <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
