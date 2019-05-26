@@ -1,9 +1,5 @@
 <context>
 
-    <sample>
-        <item value="Кто такая Алиса"/>
-        <item value="Франсуа Рене Шатобриан"/>
-    </sample>
 
     <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
