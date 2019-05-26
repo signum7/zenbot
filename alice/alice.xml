@@ -18,7 +18,10 @@
 				<item value="Здравствуй, разве тебя зовут  не $UserName? Как тебя зовут? "/>
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>
+			<input pattern="$Text">
 			<var name="UserName" value="cap($Text)" scope="user"/>
+			<output value="Приятно познакомиться, $UserName!"/>
+			</input>
 		</input>
 		
 		
