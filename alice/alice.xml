@@ -9,6 +9,7 @@
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+			<item value="Мяу, мой котик..."/>
         </output>
 
         <context if="empty($UserName)" id="name">
@@ -21,12 +22,26 @@
             </input>
         </context>
     </input>
+	
+	<input pattern="* (я не*|меня завут не*|ты ошиблась я не*) *">
+		<output if="full($UserName)">
+			<item value="Привет, тебя разве завут не $UserName?"/>
+			<item value="Извини обозналась Тебя как зовут?"/>
+		</output>
+		<input pattern="$Text">
+                <var name="UserName" value="cap($Text)" scope="user"/>
+                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <context/>
+            </input>
+		
+	</input>
 
     <input pattern="* пока *">
         
         <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
+			<output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+			<output value="Пока-пока, $UserName!"/>
+			<output value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
