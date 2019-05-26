@@ -32,9 +32,9 @@
 		<input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
                 <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
-                <context/>
+                
             </input>
-		<context/>
+		
 	</input>
 
     <input pattern="* пока *">
