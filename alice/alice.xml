@@ -10,11 +10,11 @@
 	</input>
 
     <input pattern="* (привет*|здравствуй*) *">
-	
+	<speaker audio="alice-sounds-animals-cat-3.opus">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
-			<item var name="tts" value=<speaker audio="alice-sounds-animals-cat-3.opus">"Мяу, мой котик..."/>
+			<item value="Мяу, мой котик..."/>
 			<item value="$UserName! Я вас приветствую"/>
         </output>
 		<context>
