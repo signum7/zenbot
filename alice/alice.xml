@@ -31,7 +31,7 @@
 			<output> 
 			<item value="Пока-пока, $UserName!"/>
 			<item value="Чмоки, мой дорогой $UserName до скорй встречи!"/>
-			<output/> 
+			</output> 
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
