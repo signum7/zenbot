@@ -18,7 +18,7 @@
 				<item value="Здравствуй, разве тебя зовут  не $UserName? Как тебя зовут? "/>
 				<item value="Упс, но неважно мой котик... Как тебя зовут?"/>
 			</output>
-			<var name="UserName" value="" scope="user"/>
+			<var name="UserName" value="cap($Text)" scope="user"/>
 		</input>
 		
 		
