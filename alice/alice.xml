@@ -11,6 +11,14 @@
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
 			<item value="Мяу, мой котик..."/>
         </output>
+		<input pattern="* (я не*|меня зовут не*|мое имя не*) *">
+		    <output if="full($UserName)">
+				<item value="Извините обозналась"/>
+				<item value="Здравствуй, разве тебя зовут  не $UserName? "/>
+				<item value="Упс, но неважно мой котик..."/>
+        </output>
+		
+		</input>
 
         <context if="empty($UserName)" id="name">
             <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
@@ -26,7 +34,7 @@
 
 
     <input pattern="* пока *">   
-<var name="tts" value="Пок+асики"/>	
+
         <var name="end_session" value="javascript: true"/>
 			<output value="Ну пока, незнакомец!" if="empty($UserName)"/>
 			<output> 
