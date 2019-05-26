@@ -22,10 +22,7 @@
 			<var name="UserName" value="cap($Text)" scope="user"/>
 			
 			
-		</input>
-		
-		
-		
+		</input>		
 		</context>
 		
 		
@@ -74,9 +71,7 @@
 
             <output value="$Result" if="full($Result)"/>
 
-            <input pattern="* (еще|другой вариант) *"/>
 
-            <sample value="Другой вариант"/>
         </context>
 
 
