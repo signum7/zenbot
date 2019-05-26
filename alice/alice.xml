@@ -23,7 +23,7 @@
     </input>
 
     <input pattern="* пока *">
-        <var name="tts" value="Пок+асики"/>
+        
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
         <output value="Пока-пока, $UserName!"/>
